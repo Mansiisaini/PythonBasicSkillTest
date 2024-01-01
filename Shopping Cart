@@ -1,0 +1,28 @@
+class Item:
+    name = ''
+    price= 0
+
+    def __init__(self,s,p):
+        self.name = s
+        self.price = p
+    pass
+
+class ShoppingCart:
+    cart_names = []
+    cart_prices= []
+    tot = 0
+
+    def __init__(self):
+        super().__init__()
+
+    def add(self, item):
+        self.cart_names.append(item.name)
+        self.cart_prices.append(item.price)
+
+    def total(self):
+        self.tot = sum(self.cart_prices)
+        return self.tot     
+
+    def __len__(self):
+        return len(self.cart_names)
+    pass
